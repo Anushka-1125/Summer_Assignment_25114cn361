@@ -1,0 +1,88 @@
+//Program-1
+
+//Write a program to Calculate sum of first N natural numbers.
+
+# include <stdio.h>
+int main()
+{
+    int N ,i, sum=0;
+    printf("Enter the N : ");
+    scanf(" %d",&N);
+    for(i=1;i<=N;i++)
+    {
+        sum+=i;
+    }
+    printf("Sum of first N natural numbers is : %d",sum);
+    return 0;
+}
+
+
+//Program-2
+
+//Write a program to Print multiplication table of a given number.
+
+# include <stdio.h>
+int main()
+{
+    int N ,i;
+    printf("Enter the N : ");
+    scanf(" %d",&N);
+    printf("Multiplication table of %d is:\n");
+    for(i=1;i<=10;i++)
+    {
+       printf(" %d*%d = %d \n",N,i,(N*i));
+    }
+    return 0;
+}
+
+
+//Program-3
+
+//Write a program to Find factorial of a number.
+
+# include <stdio.h>
+int main()
+{
+    int N ,i,f=1;
+    printf("Enter the N : ");
+    scanf(" %d",&N);
+    for(i=1;i<=N;i++)
+    {
+        f*=i;
+    }
+       printf(" factorial of %d is:%d",N,f);
+    return 0;
+}
+
+
+//Program-4
+
+//Write a program to Count digits in a number. 
+
+#include <stdio.h>
+int main()
+{
+    int N, c = 0;
+
+    printf("Enter N: ");
+    scanf("%d", &N);
+
+    if(N < 0)
+        N = -N;
+
+    if(N == 0)
+        c = 1;
+    else
+    {
+        while(N > 0)
+        {
+            c++;
+            N = N / 10;
+        }
+    }
+
+    printf("No of digits in a number = %d", c);
+
+    return 0;
+}
+
