@@ -1,0 +1,128 @@
+//Program-1
+
+//Write a program to Generate Fibonacci series.
+
+
+#include <stdio.h>
+int main()
+{
+    int n, a = 0, b = 1, c, i;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series:\n");
+
+    for(i = 1; i <= n; i++)
+    {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    return 0;
+}
+
+
+//Program-2
+
+//Write a program to Find nth Fibonacci term. 
+
+
+#include <stdio.h>
+int main()
+{
+    int n, a = 0, b = 1, c, i;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if(n == 1)
+        printf("The %dst Fibonacci term is %d", n, a);
+    else if(n == 2)
+        printf("The %dnd Fibonacci term is %d", n, b);
+    else
+    {
+        for(i = 3; i <= n; i++)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        printf("The %dth Fibonacci term is %d", n, b);
+    }
+
+    return 0;
+}
+
+
+//Program-3
+
+//Write a program to Check Armstrong number. 
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n, temp, digit, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    temp = n;
+
+    while(temp > 0)
+    {
+        digit = temp % 10;
+        sum = sum + (digit * digit * digit);
+        temp = temp / 10;
+    }
+
+    if(sum == n)
+        printf("%d is an Armstrong Number.", n);
+    else
+        printf("%d is not an Armstrong Number.", n);
+
+    return 0;
+}
+
+
+//Program-4
+
+//Write a program to Print Armstrong numbers in a range.
+
+
+#include <stdio.h>
+int main()
+{
+    int start, end, num, temp, digit, sum;
+
+    printf("Enter starting number: ");
+    scanf("%d", &start);
+
+    printf("Enter ending number: ");
+    scanf("%d", &end);
+
+    printf("Armstrong numbers between %d and %d are:\n", start, end);
+
+    for(num = start; num <= end; num++)
+    {
+        temp = num;
+        sum = 0;
+
+        while(temp > 0)
+        {
+            digit = temp % 10;
+            sum = sum + (digit * digit * digit);
+            temp = temp / 10;
+        }
+
+        if(sum == num)
+            printf("%d ", num);
+    }
+
+    return 0;
+}
