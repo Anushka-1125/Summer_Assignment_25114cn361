@@ -1,0 +1,88 @@
+//Program-1
+
+//Write a program to Convert decimal to binary.
+
+import java.util.*;
+public class DecimalToBinary 
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String binary = "";
+        while(n > 0) 
+        {
+            binary = (n % 2) + binary;
+            n /= 2;
+        }
+        System.out.println(binary);
+    }
+}
+
+
+//Program-2
+
+//Write a program to Convert binary to decimal.
+
+import java.util.*;
+public class BinaryToDecimal 
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int binary = sc.nextInt();
+        int decimal = 0, power = 0;
+        while(binary > 0)
+        {
+            int digit = binary % 10;
+            decimal += digit * Math.pow(2, power);
+            power++;
+            binary /= 10;
+        }
+        System.out.println(decimal);
+    }
+}
+
+
+//Program-3
+
+//Write a program to Count set bits in a number.
+
+import java.util.*;
+public class CountSetBits 
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int count = 0;
+        while(n > 0) 
+        {
+            count += n & 1;
+            n >>= 1;
+        }
+        System.out.println(count);
+    }
+}
+
+
+//Program-4
+
+//Write a program to Find x^n without pow().
+
+import java.util.*;
+public class Power
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int n = sc.nextInt();
+        long result = 1;
+        for(int i = 1; i <= n; i++)
+        {
+            result *= x;
+        }
+        System.out.println(result);
+    }
+}
