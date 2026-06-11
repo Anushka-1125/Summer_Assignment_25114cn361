@@ -1,0 +1,85 @@
+//Program-1
+
+//Write a program to Recursive factorial.
+
+import java.util.*;
+public class RecursiveFactorial {
+    static int fact(int n) {
+        if(n == 0 || n == 1)
+            return 1;
+        return n * fact(n - 1);
+    }
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(fact(n));
+    }
+}
+
+
+//Program-2
+
+//Write a program to Recursive Fibonacci. 
+
+import java.util.*;
+
+public class RecursiveFibonacci {
+    static int fib(int n) {
+        if(n <= 1)
+            return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print(fib(i) + " ");
+        }
+    }
+}
+
+
+//Program-3
+
+//Write a program to Recursive sum of digits. 
+
+import java.util.*;
+public class SumDigits {
+    static int sum(int n) {
+        if(n == 0)
+            return 0;
+        return n % 10 + sum(n / 10);
+    }
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(sum(n));
+    }
+}
+
+
+//Program-4
+
+//Write a program to Recursive reverse number. 
+
+import java.util.*;
+public class ReverseNumber 
+{
+    static int rev = 0;
+    static void reverse(int n) 
+    {
+        if(n == 0)
+            return;
+        rev = rev * 10 + n % 10;
+        reverse(n / 10);
+    }
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        reverse(n);
+        System.out.println(rev);
+    }
+}
