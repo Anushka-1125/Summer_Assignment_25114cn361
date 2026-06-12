@@ -1,0 +1,119 @@
+//Program-1
+
+//Write a program to Write function for palindrome. 
+
+
+import java.util.*;
+public class PalindromeFunction 
+{
+    static boolean palindrome(int n) 
+    {
+        int temp = n;
+        int rev = 0;
+        while(n > 0) 
+        {
+            rev = rev * 10 + n % 10;
+            n /= 10;
+        }
+        return temp == rev;
+    }
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(palindrome(n))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+
+//Program-2
+
+//Write a program to Write function for Armstrong.
+
+
+import java.util.*;
+public class ArmstrongFunction 
+{
+    static boolean armstrong(int n) 
+    {
+        int temp = n;
+        int sum = 0;
+        while(n > 0) 
+        {
+            int digit = n % 10;
+            sum += digit * digit * digit;
+            n /= 10;
+        }
+        return temp == sum;
+    }
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(armstrong(n))
+            System.out.println("Armstrong Number");
+        else
+            System.out.println("Not Armstrong Number");
+    }
+}
+
+
+//Program-3
+
+//Write a program to Write function for Fibonacci.
+
+
+import java.util.*;
+public class FibonacciFunction 
+{
+    static void fibonacci(int n) 
+    {
+        int a = 0, b = 1, c;
+        for(int i = 1; i <= n; i++) 
+        {
+            System.out.print(a + " ");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        fibonacci(n);
+    }
+}
+
+
+//Program-4
+
+//Write a program to Write function for perfect number.
+
+
+import java.util.*;
+public class PerfectFunction 
+{
+    static boolean perfect(int n) 
+    {
+        int sum = 0;
+        for(int i = 1; i < n; i++) 
+        {
+            if(n % i == 0)
+                sum += i;
+        }
+        return sum == n;
+    }
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(perfect(n))
+            System.out.println("Perfect Number");
+        else
+            System.out.println("Not Perfect Number");
+    }
+}
