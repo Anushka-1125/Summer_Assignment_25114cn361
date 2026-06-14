@@ -1,0 +1,133 @@
+//Program-1
+
+//Write a program to Linear search. 
+
+
+import java.util.*;\
+public class LinearSearch 
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        System.out.print("Enter element to search: ");
+        int key = sc.nextInt();
+        int found = 0;
+        for(int i = 0; i < n; i++) 
+        {
+            if(arr[i] == key)
+            {
+                System.out.println("Found at position " + (i + 1));
+                found = 1;
+                break;
+            }
+        }
+        if(found == 0)
+            System.out.println("Element not found");
+    }
+}
+
+
+//Program-2
+
+//Write a program to Frequency of an element.
+
+
+import java.util.*;
+public class FrequencyElement 
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        System.out.print("Enter element: ");
+        int key = sc.nextInt();
+        int count = 0;
+        for(int i = 0; i < n; i++) 
+        {
+            if(arr[i] == key)
+                count++;
+        }
+        System.out.println("Frequency = " + count);
+    }
+}
+
+
+//Program-3
+
+//Write a program to Second largest element. 
+
+
+import java.util.*;
+public class SecondLargest 
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        int largest = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        for(int i = 0; i < n; i++) 
+        {
+            if(arr[i] > largest) 
+            {
+                second = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] > second && arr[i] != largest) 
+            {
+                second = arr[i];
+            }
+        }
+        System.out.println("Second Largest = " + second);
+    }
+}
+
+
+//Program-4
+
+//Write a program to Find duplicates in array. 
+
+
+
+import java.util.*;
+public class DuplicateElements 
+{
+    public static void main(String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Duplicate Elements:");
+        for(int i = 0; i < n; i++) 
+        {
+            for(int j = i + 1; j < n; j++) 
+            {
+                if(arr[i] == arr[j]) 
+                {
+                    System.out.println(arr[i]);
+                    break;
+                }
+            }
+        }
+    }
+}
