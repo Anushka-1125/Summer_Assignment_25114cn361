@@ -1,0 +1,129 @@
+//Program-1
+
+//Write a program to Merge arrays. 
+
+
+import java.util.*;
+public class MergeArrays
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size of first array: ");
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter first array elements:");
+        for(int i = 0; i < n; i++)
+            a[i] = sc.nextInt();
+        System.out.print("Enter size of second array: ");
+        int m = sc.nextInt();
+        int b[] = new int[m];
+        System.out.println("Enter second array elements:");
+        for(int i = 0; i < m; i++)
+            b[i] = sc.nextInt();
+        int c[] = new int[n + m];
+        for(int i = 0; i < n; i++)
+            c[i] = a[i];
+        for(int i = 0; i < m; i++)
+            c[n + i] = b[i];
+        System.out.println("Merged Array:");
+        for(int i = 0; i < n + m; i++)
+            System.out.print(c[i] + " ");
+    }
+}
+
+
+//Program-2
+
+//Write a program to Union of arrays. 
+
+
+import java.util.*;
+public class UnionArray
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i = 0; i < n; i++)
+            a[i] = sc.nextInt();
+        int m = sc.nextInt();
+        int b[] = new int[m];
+        for(int i = 0; i < m; i++)
+            b[i] = sc.nextInt();
+        HashSet<Integer> set = new HashSet<>();
+        for(int x : a)
+            set.add(x);
+        for(int x : b)
+            set.add(x);
+        System.out.println("Union = " + set);
+    }
+}
+
+
+//Program-3
+
+//Write a program to Intersection of arrays. 
+
+
+import java.util.*;
+public class IntersectionArray
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i = 0; i < n; i++)
+            a[i] = sc.nextInt();
+        int m = sc.nextInt();
+        int b[] = new int[m];
+        for(int i = 0; i < m; i++)
+            b[i] = sc.nextInt();
+        HashSet<Integer> set = new HashSet<>();
+        for(int x : a)
+            set.add(x);
+        System.out.println("Intersection:");
+        for(int x : b)
+        {
+            if(set.contains(x))
+                System.out.print(x + " ");
+        }
+    }
+}
+
+
+//Program-4
+
+//Write a program to Find common elements. 
+
+
+import java.util.*;
+public class CommonElements
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i = 0; i < n; i++)
+            a[i] = sc.nextInt();
+        int m = sc.nextInt();
+        int b[] = new int[m];
+        for(int i = 0; i < m; i++)
+            b[i] = sc.nextInt();
+        System.out.println("Common Elements:");
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < m; j++)
+            {
+                if(a[i] == b[j])
+                {
+                    System.out.print(a[i] + " ");
+                    break;
+                }
+            }
+        }
+    }
+}
