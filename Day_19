@@ -1,0 +1,113 @@
+//Program-1
+
+//Write a program to Add matrices.
+
+
+import java.util.*;
+public class MatrixAddition
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int b[][] = new int[3][3];
+        int c[][] = new int[3][3];
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                a[i][j] = sc.nextInt();
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                b[i][j] = sc.nextInt();
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                c[i][j] = a[i][j] + b[i][j];
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+//Program-2
+
+//Write a program to Subtract matrices.
+
+
+ import java.util.*;
+public class MatrixSubtraction
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int b[][] = new int[3][3];
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                a[i][j] = sc.nextInt();
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                b[i][j] = sc.nextInt();
+        System.out.println("Difference Matrix:");
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+                System.out.print((a[i][j] - b[i][j]) + " ");
+            System.out.println();
+        }
+    }
+}
+
+
+//Program-3
+
+//Write a program to Transpose matrix.
+
+
+import java.util.*;
+public class TransposeMatrix
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                a[i][j] = sc.nextInt();
+        System.out.println("Transpose:");
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+                System.out.print(a[j][i] + " ");
+            System.out.println();
+        }
+    }
+}
+
+
+//Program-4
+
+//Write a program to Find diagonal sum. 
+
+
+import java.util.*;
+public class DiagonalSum
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int sum = 0;
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+                a[i][j] = sc.nextInt();
+        }
+        for(int i = 0; i < 3; i++)
+            sum += a[i][i];
+
+        System.out.println("Diagonal Sum = " + sum);
+    }
+}
