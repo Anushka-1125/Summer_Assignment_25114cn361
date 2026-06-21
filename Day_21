@@ -1,0 +1,92 @@
+//Program-1
+
+// Write a program to Find string length without strlen(). 
+
+
+import java.util.*;
+public class StringLength
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        int count=0;
+        for(char ch : str.toCharArray())
+            count++;
+        System.out.println("Length = "+count);
+    }
+}
+
+
+//Program-2
+
+// Write a program to Reverse a string. 
+
+
+import java.util.*;
+public class ReverseString
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        for(int i=str.length()-1;i>=0;i--)
+            System.out.print(str.charAt(i));
+    }
+}
+
+
+//Program-3
+
+// Write a program to Count vowels and consonants. 
+
+
+import java.util.*;
+public class VowelConsonant
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine().toLowerCase();
+        int vowels=0, consonants=0;
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+            if(ch>='a' && ch<='z')
+            {
+                if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+                    vowels++;
+                else
+                    consonants++;
+            }
+        }
+        System.out.println("Vowels = "+vowels);
+        System.out.println("Consonants = "+consonants);
+    }
+}
+
+
+//Program-4
+
+// Write a program to Convert lowercase to uppercase.
+
+
+import java.util.*;
+public class LowerToUpper
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String upper="";
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+            if(ch>='a' && ch<='z')
+                upper+=(char)(ch-32);
+            else
+                upper+=ch;
+        }
+        System.out.println(upper);
+    }
+}
