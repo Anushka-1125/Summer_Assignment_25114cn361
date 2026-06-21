@@ -1,0 +1,127 @@
+//Program-1
+
+// Write a program to Multiply matrices. 
+
+
+import java.util.*;
+public class MatrixMultiplication
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int b[][] = new int[3][3];
+        int c[][] = new int[3][3];
+        System.out.println("Enter first matrix:");
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                a[i][j]=sc.nextInt();
+        System.out.println("Enter second matrix:");
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                b[i][j]=sc.nextInt();
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                c[i][j]=0;
+                for(int k=0;k<3;k++)
+                    c[i][j]+=a[i][k]*b[k][j];
+            }
+        }
+        System.out.println("Product Matrix:");
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+                System.out.print(c[i][j]+" ");
+            System.out.println();
+        }
+    }
+}
+
+
+//Program-2
+
+//Write a program to Check symmetric matrix. 
+
+
+import java.util.*;
+public class SymmetricMatrix
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a[][]=new int[3][3];
+        boolean symmetric=true;
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                a[i][j]=sc.nextInt();
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                if(a[i][j]!=a[j][i])
+                {
+                    symmetric=false;
+                    break;
+                }
+            }
+        }
+        if(symmetric)
+            System.out.println("Symmetric Matrix");
+        else
+            System.out.println("Not Symmetric Matrix");
+    }
+}
+
+
+//Program-3
+
+// Write a program to Find row-wise sum.  
+
+
+import java.util.*;
+public class RowWiseSum
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a[][]=new int[3][3];
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                a[i][j]=sc.nextInt();
+        for(int i=0;i<3;i++)
+        {
+            int sum=0;
+            for(int j=0;j<3;j++)
+                sum+=a[i][j];
+            System.out.println("Sum of Row "+(i+1)+" = "+sum);
+        }
+    }
+}
+
+
+//Program-4
+
+// Write a program to Find column-wise sum.
+
+
+import java.util.*;
+public class ColumnWiseSum
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a[][]=new int[3][3];
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                a[i][j]=sc.nextInt();
+        for(int j=0;j<3;j++)
+        {
+            int sum=0;
+            for(int i=0;i<3;i++)
+                sum+=a[i][j];
+            System.out.println("Sum of Column "+(j+1)+" = "+sum);
+        }
+    }
+}
