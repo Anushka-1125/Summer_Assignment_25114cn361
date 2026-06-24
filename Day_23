@@ -1,0 +1,101 @@
+//Program-1
+
+import java.util.*;
+public class FirstNonRepeating
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        for(int i=0;i<str.length();i++)
+        {
+            int count=0;
+            for(int j=0;j<str.length();j++)
+            {
+                if(str.charAt(i)==str.charAt(j))
+                    count++;
+            }
+            if(count==1)
+            {
+                System.out.println(str.charAt(i));
+                break;
+            }
+        }
+    }
+}
+
+
+//Program-2
+
+import java.util.*;
+public class FirstRepeating
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        for(int i=0;i<str.length();i++)
+        {
+            for(int j=i+1;j<str.length();j++)
+            {
+                if(str.charAt(i)==str.charAt(j))
+                {
+                    System.out.println(str.charAt(i));
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+//Program-3
+
+import java.util.*;
+public class Anagram
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        char a[] = s1.toCharArray();
+        char b[] = s2.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        if(Arrays.equals(a,b))
+            System.out.println("Anagram");
+        else
+            System.out.println("Not Anagram");
+    }
+}
+
+
+//Program-4
+
+import java.util.*;
+public class MaxOccurringChar
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int max = 0;
+        char result = ' ';
+        for(int i=0;i<str.length();i++)
+        {
+            int count=0;
+            for(int j=0;j<str.length();j++)
+            {
+                if(str.charAt(i)==str.charAt(j))
+                    count++;
+            }
+            if(count>max)
+            {
+                max=count;
+                result=str.charAt(i);
+            }
+        }
+        System.out.println(result);
+    }
+}
