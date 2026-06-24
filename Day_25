@@ -1,0 +1,96 @@
+//Program-1
+
+import java.util.*;
+public class MergeSortedArrays
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int a[] = new int[n];
+        int b[] = new int[m];
+        for(int i=0;i<n;i++)
+            a[i]=sc.nextInt();
+        for(int i=0;i<m;i++)
+            b[i]=sc.nextInt();
+        int i=0,j=0;
+        while(i<n && j<m)
+        {
+            if(a[i]<b[j])
+                System.out.print(a[i++]+" ");
+            else
+                System.out.print(b[j++]+" ");
+        }
+        while(i<n)
+            System.out.print(a[i++]+" ");
+        while(j<m)
+            System.out.print(b[j++]+" ");
+    }
+}
+
+
+//Program-2
+
+import java.util.*;
+public class CommonCharacters
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.nextLine();
+        String s2=sc.nextLine();
+        for(int i=0;i<s1.length();i++)
+        {
+            if(s2.indexOf(s1.charAt(i))!=-1)
+                System.out.print(s1.charAt(i)+" ");
+        }
+    }
+}
+
+
+//Program-3
+
+import java.util.*;
+public class SortNames
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        String names[]=new String[n];
+        for(int i=0;i<n;i++)
+            names[i]=sc.nextLine();
+        Arrays.sort(names);
+        for(String s:names)
+            System.out.println(s);
+    }
+}
+
+
+//Program-4
+
+import java.util.*;
+public class SortWordsLength
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String words[]=sc.nextLine().split(" ");
+        for(int i=0;i<words.length-1;i++)
+        {
+            for(int j=i+1;j<words.length;j++)
+            {
+                if(words[i].length()>words[j].length())
+                {
+                    String temp=words[i];
+                    words[i]=words[j];
+                    words[j]=temp;
+                }
+            }
+        }
+        for(String s:words)
+            System.out.print(s+" ");
+    }
+}
