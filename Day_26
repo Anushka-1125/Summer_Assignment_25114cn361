@@ -1,0 +1,138 @@
+//Program-1
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int number, guess, attempts = 0;
+    srand(time(0));
+    number = rand() % 100 + 1;
+    printf("===== Number Guessing Game =====\n");
+    printf("Guess a number between 1 and 100\n");
+    do
+    {
+        printf("Enter your guess: ");
+        scanf("%d", &guess);
+        attempts++;
+        if (guess > number)
+            printf("Too High!\n");
+        else if (guess < number)
+            printf("Too Low!\n");
+        else
+        {
+            printf("Congratulations! You guessed the number.\n");
+            printf("Total Attempts = %d\n", attempts);
+        }
+    } while (guess != number);
+    return 0;
+}
+
+
+//Program-2
+
+#include <stdio.h>
+int main()
+{
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    if (age >= 18)
+        printf("You are eligible to vote.\n");
+    else
+        printf("You are NOT eligible to vote.\n");
+    return 0;
+}
+
+
+//Program-3
+
+#include <stdio.h>
+int main()
+{
+    int choice;
+    float balance = 10000, amount;
+    do
+    {
+        printf("\n===== ATM MENU =====\n");
+        printf("1. Check Balance\n");
+        printf("2. Deposit\n");
+        printf("3. Withdraw\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("Current Balance = %.2f\n", balance);
+            break;
+        case 2:
+            printf("Enter amount to deposit: ");
+            scanf("%f", &amount);
+            if (amount > 0)
+            {
+                balance += amount;
+                printf("Deposit Successful.\n");
+            }
+            else
+                printf("Invalid Amount.\n");
+            break;
+        case 3:
+            printf("Enter amount to withdraw: ");
+            scanf("%f", &amount);
+            if (amount > 0 && amount <= balance)
+            {
+                balance -= amount;
+                printf("Withdrawal Successful.\n");
+            }
+            else
+                printf("Insufficient Balance or Invalid Amount.\n");
+            break;
+        case 4:
+            printf("Thank You for using ATM.\n");
+            break;
+        default:
+            printf("Invalid Choice.\n");
+        }
+    } while (choice != 4);
+    return 0;
+}
+
+
+//Program-4
+
+#include <stdio.h>
+int main()
+{
+    int ans, score = 0;
+    printf("===== Simple Quiz =====\n");
+    printf("\nQ1. What is the capital of India?\n");
+    printf("1. Mumbai\n");
+    printf("2. Delhi\n");
+    printf("3. Kolkata\n");
+    printf("4. Chennai\n");
+    printf("Enter your answer: ");
+    scanf("%d", &ans);
+    if (ans == 2)
+        score++;
+    printf("\nQ2. C is a ______?\n");
+    printf("1. Programming Language\n");
+    printf("2. Operating System\n");
+    printf("3. Database\n");
+    printf("4. Browser\n");
+    printf("Enter your answer: ");
+    scanf("%d", &ans);
+    if (ans == 1)
+        score++;
+    printf("\nQ3. 10 + 15 = ?\n");
+    printf("1. 20\n");
+    printf("2. 25\n");
+    printf("3. 30\n");
+    printf("4. 35\n");
+    printf("Enter your answer: ");
+    scanf("%d", &ans);
+    if (ans == 2)
+        score++;
+    printf("\nQuiz Completed!\n");
+    printf("Your Score = %d/3\n", score);
+    return 0;
+}
